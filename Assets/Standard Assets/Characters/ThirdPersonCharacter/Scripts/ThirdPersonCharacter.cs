@@ -28,7 +28,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		Vector3 m_CapsuleCenter;
 		CapsuleCollider m_Capsule;
 		bool m_Crouching;
-
+        public GameObject m_Snowball;
 
 		void Start()
 		{
@@ -45,6 +45,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 		public void Move(Vector3 move, bool crouch, bool jump)
 		{
+            if(Vector3.Distance(Vector3.zero, transform.position + move) > m_Snowball.transform.localScale.x/2) {
+                move = Vector3.zero;
+            }
 
 			// convert the world relative moveInput vector into a local-relative
 			// turn amount and forward amount required to head in the desired
