@@ -10,6 +10,7 @@ public class Player : MonoBehaviour {
     public static float m_CurrentFreezeLevel;
     public float m_FreezingSpeed = 1;
     public float m_SnowFallingMultipler = 3;
+    public float m_WarmingMultipler = 2;
     public RectTransform m_FreezeBar;
     public SnowEmitter m_SnowEmitter;
     public bool isNearFirecamp = false;
@@ -30,18 +31,18 @@ public class Player : MonoBehaviour {
         if(m_CurrentFreezeLevel >= 75) {
             return 1f;
         } else if(m_CurrentFreezeLevel >= 50) {
-            return 0.75f;
+            return 0.8f;
         } else if(m_CurrentFreezeLevel >= 25) {
-            return 0.5f;
+            return 0.6f;
         } else {
-            return 0.25f;
+            return 0.4f;
         }
     }
 
 	void Update () {
         if(isNearFirecamp) {
             if(m_CurrentFreezeLevel < m_FreezeLevel) {
-                m_CurrentFreezeLevel += (m_FreezingSpeed * Time.deltaTime);
+                m_CurrentFreezeLevel += (m_FreezingSpeed * m_WarmingMultipler * Time.deltaTime);
                 m_FreezeBar.GetComponent<Image>().color = m_WarmColor;
             }
 
