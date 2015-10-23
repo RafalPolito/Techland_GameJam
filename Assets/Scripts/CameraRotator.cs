@@ -16,6 +16,7 @@ public class CameraRotator : MonoBehaviour {
     private Vector3 m_StartTransformPosition;
     private Vector3 m_StartTransformRotation;
     private bool isStarting = true;
+    private bool isZoomed = false;
 
     void Awake() {
         m_StartTransformPosition = m_Camera.transform.position;
@@ -35,7 +36,11 @@ public class CameraRotator : MonoBehaviour {
                     transform.eulerAngles = new Vector3(rotationX, rotationY, Input.GetAxis("CameraShake") * m_ShakePower);
                 }
 
-                if(Input.GetButton("CameraZoom")) {
+                if(Input.GetButtonDown("CameraZoom")) {
+                    isZoomed = !isZoomed;
+                }
+
+                if(isZoomed) {
                     m_Camera.fieldOfView = Mathf.Lerp(m_Camera.fieldOfView, m_FOV / 2, Time.deltaTime * m_ZoomSpeed);
                 } else {
                     m_Camera.fieldOfView = Mathf.Lerp(m_Camera.fieldOfView, m_FOV, Time.deltaTime * m_ZoomSpeed);
@@ -50,9 +55,9 @@ public class CameraRotator : MonoBehaviour {
                     isStarting = false;
                 }
             }
+        } else {
+            m_StartDelay -= Time.deltaTime;
         }
-
-        m_StartDelay -= Time.deltaTime;
     }
 
 }
