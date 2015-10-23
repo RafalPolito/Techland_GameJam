@@ -27,7 +27,7 @@ public class CameraRotator : MonoBehaviour {
 
     void Update () {
         if(m_StartDelay <= 0) {
-            if(!isStarting) {
+            if(!isStarting && !GameController.isPaused) {
                 float rotationX = transform.eulerAngles.x + Input.GetAxis("CameraMoveVertical") * m_Speed;
                 float rotationY = transform.eulerAngles.y + Input.GetAxis("CameraMoveHorizontal") * m_Speed;
 

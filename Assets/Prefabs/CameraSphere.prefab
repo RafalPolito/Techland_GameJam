@@ -126,7 +126,7 @@ MonoBehaviour:
   m_ZoomSpeed: 5
   m_Camera: {fileID: 2080812}
   m_FadeScreen: {fileID: 0}
-  m_StartDelay: 5
+  m_StartDelay: 3
 --- !u!124 &12431614
 Behaviour:
   m_ObjectHideFlags: 1
