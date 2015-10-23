@@ -12,6 +12,8 @@ public class Player : MonoBehaviour {
     public RectTransform m_FreezeBar;
     public SnowEmitter m_SnowEmitter;
     public bool isNearFirecamp = false;
+    public Color m_ColdColor = new Color(0f, 0.5f, 1f, 1f);
+    public Color m_WarmColor = new Color(1f, 0.5f, 0f, 1f);
 
     private ThirdPersonCharacter m_ThirdPersonCharacter;
 
@@ -21,12 +23,24 @@ public class Player : MonoBehaviour {
     }
 	
 	void Update () {
-        if(isNearFirecamp && m_CurrentFreezeLevel < m_FreezeLevel) {
-            m_CurrentFreezeLevel += (m_FreezingSpeed * Time.deltaTime);
-        } else if(m_SnowEmitter.isSnowFalling) {
-            m_CurrentFreezeLevel -= (m_FreezingSpeed * m_SnowFallingMultipler * Time.deltaTime);
+        if(isNearFirecamp) {
+            if(m_CurrentFreezeLevel < m_FreezeLevel) {
+                m_CurrentFreezeLevel += (m_FreezingSpeed * Time.deltaTime);
+                m_FreezeBar.GetComponent<Image>().color = m_WarmColor;
+            }
+
+            if(m_CurrentFreezeLevel >= m_FreezeLevel) {
+                m_CurrentFreezeLevel = m_FreezeLevel;
+                m_FreezeBar.GetComponent<Image>().color = Color.white;
+            }
         } else {
-            m_CurrentFreezeLevel -= (m_FreezingSpeed * Time.deltaTime);
+            if(m_SnowEmitter.isSnowFalling) {
+                m_CurrentFreezeLevel -= (m_FreezingSpeed * m_SnowFallingMultipler * Time.deltaTime);                
+            } else {
+                m_CurrentFreezeLevel -= (m_FreezingSpeed * Time.deltaTime);
+            }
+
+            m_FreezeBar.GetComponent<Image>().color = m_ColdColor;
         }
 
         if(m_CurrentFreezeLevel <= 0) {

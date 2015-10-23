@@ -122,6 +122,8 @@ MonoBehaviour:
   m_CameraClampX: 10
   m_ShakePower: 70
   m_Speed: .25
+  m_FOV: 60
+  m_Camera: {fileID: 2080812}
 --- !u!124 &12431614
 Behaviour:
   m_ObjectHideFlags: 1
