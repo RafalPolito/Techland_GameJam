@@ -22,6 +22,18 @@ public class Player : MonoBehaviour {
         m_ThirdPersonCharacter = GetComponent<ThirdPersonCharacter>();
     }
 	
+    float FreezeLevel() {
+        if(m_CurrentFreezeLevel >= 75) {
+            return 1f;
+        } else if(m_CurrentFreezeLevel >= 50) {
+            return 0.75f;
+        } else if(m_CurrentFreezeLevel >= 25) {
+            return 0.5f;
+        } else {
+            return 0.25f;
+        }
+    }
+
 	void Update () {
         if(isNearFirecamp) {
             if(m_CurrentFreezeLevel < m_FreezeLevel) {
@@ -47,7 +59,7 @@ public class Player : MonoBehaviour {
             Application.LoadLevel(0);
         }
 
-        m_ThirdPersonCharacter.m_AnimSpeedMultiplier = m_CurrentFreezeLevel/100;
+        m_ThirdPersonCharacter.m_AnimSpeedMultiplier = FreezeLevel();
         m_FreezeBar.sizeDelta = new Vector2(m_CurrentFreezeLevel, m_FreezeBar.sizeDelta.y);
     }
 
