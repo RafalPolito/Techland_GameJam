@@ -5,6 +5,17 @@ public class SnowEmitter : MonoBehaviour {
 
     public ParticleSystem m_EmitterInstance;
     public float m_LastSign = 1;
+    public int m_Count = 0;
+
+    public bool isSnowFalling {
+        get {
+            if(m_EmitterInstance.particleCount > 0) {
+                return true;
+            }
+
+            return false;
+        }
+    }
 
     void Awake() {
         m_EmitterInstance.Stop();
@@ -20,5 +31,5 @@ public class SnowEmitter : MonoBehaviour {
         } else if(m_EmitterInstance != null)  {
             m_EmitterInstance.Stop();
         }
-	}
+    }
 }

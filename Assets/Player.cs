@@ -7,7 +7,9 @@ public class Player : MonoBehaviour {
 
     public static float m_FreezeLevel = 100;
     public float m_FreezingSpeed = 1;
+    public float m_SnowFallingMultipler = 3;
     public RectTransform m_FreezeBar;
+    public SnowEmitter m_SnowEmitter;
 
     private ThirdPersonCharacter m_ThirdPersonCharacter;
 
@@ -16,7 +18,11 @@ public class Player : MonoBehaviour {
     }
 	
 	void Update () {
-        m_FreezeLevel -= (m_FreezingSpeed * Time.deltaTime);
+        if(m_SnowEmitter.isSnowFalling) {
+            m_FreezeLevel -= (m_FreezingSpeed * m_SnowFallingMultipler * Time.deltaTime);
+        } else {
+            m_FreezeLevel -= (m_FreezingSpeed * Time.deltaTime);
+        }
 
         if(m_FreezeLevel <= 0) {
             Application.LoadLevel(0);

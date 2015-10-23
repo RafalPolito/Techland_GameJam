@@ -161,21 +161,25 @@ Prefab:
       propertyPath: m_FreezeBar
       value: 
       objectReference: {fileID: 1645751040}
+    - target: {fileID: 11426458, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 2}
+      propertyPath: m_SnowEmitter
+      value: 
+      objectReference: {fileID: 2036614545}
     - target: {fileID: 496262, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 2}
       propertyPath: m_LocalRotation.x
-      value: .532675147
+      value: .532675207
       objectReference: {fileID: 0}
     - target: {fileID: 496262, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 2}
       propertyPath: m_LocalRotation.y
-      value: .0703404471
+      value: .0703404546
       objectReference: {fileID: 0}
     - target: {fileID: 496262, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 2}
       propertyPath: m_LocalRotation.z
-      value: .836132646
+      value: .836132765
       objectReference: {fileID: 0}
     - target: {fileID: 496262, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -.110415131
+      value: -.110415146
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 2}
@@ -632,3 +636,9 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1645751039}
+--- !u!114 &2036614545 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11472742, guid: da74ebe99e814024284480f8596a5019,
+    type: 2}
+  m_PrefabInternal: {fileID: 976403710}
+  m_Script: {fileID: 11500000, guid: 82064f3b288a4984b8573e024a1e9d5b, type: 3}
