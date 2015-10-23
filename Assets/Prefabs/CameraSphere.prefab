@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CameraClampX: 10
   m_ShakePower: 20
-  m_Speed: .25
+  m_Speed: .100000001
   m_FOV: 60
   m_ZoomSpeed: 5
   m_Camera: {fileID: 2080812}
