@@ -63,7 +63,7 @@ public class Player : MonoBehaviour {
         if(m_CurrentFreezeLevel <= 0) {
             isGameOver = true;
             m_GameOverEvent.Invoke();
-            m_GameOver.color = Color.white;
+            m_GameOver.color = Color.black;
         }
 
         m_ThirdPersonCharacter.m_AnimSpeedMultiplier = FreezeLevel();
