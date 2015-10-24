@@ -15,7 +15,7 @@ public class CameraRotator : MonoBehaviour {
 
     private Vector3 m_StartTransformPosition;
     private Vector3 m_StartTransformRotation;
-    private bool isStarting = true;
+    public static bool isStarting = true;
     private bool isZoomed = false;
 
     void Awake() {
@@ -40,9 +40,9 @@ public class CameraRotator : MonoBehaviour {
                     isZoomed = !isZoomed;
                 }
 
-                if(m_Camera.transform.localEulerAngles.x > 0) {
+                if(transform.localEulerAngles.x > 0 && transform.localEulerAngles.x < 90) {
                     m_Camera.transform.localEulerAngles = new Vector3(transform.eulerAngles.x * 0.1875f, 0, 0);
-                    m_Camera.transform.localPosition = new Vector3(m_StartTransformPosition.x, m_StartTransformPosition.y, m_StartTransformPosition.z - transform.eulerAngles.x * 0.125f);
+                    m_Camera.transform.localPosition = new Vector3(m_StartTransformPosition.x, m_StartTransformPosition.y - transform.eulerAngles.x / 10, m_StartTransformPosition.z - transform.eulerAngles.x * 0.125f);
                 }
 
                 if(isZoomed) {
@@ -55,8 +55,11 @@ public class CameraRotator : MonoBehaviour {
                 m_Camera.transform.eulerAngles = Vector3.Lerp(m_Camera.transform.eulerAngles, m_StartTransformRotation, Time.deltaTime * m_ZoomSpeed / 2);
                 m_FadeScreen.color = Color.Lerp(m_FadeScreen.color, Color.clear, Time.deltaTime);
 
-                if(Vector3.Distance(m_Camera.transform.position, m_StartTransformPosition) < 0.05f
-                    && Vector3.Distance(m_Camera.transform.eulerAngles, m_StartTransformRotation) < 0.05f) {
+                if(Vector3.Distance(m_Camera.transform.position, m_StartTransformPosition) < 0.1f
+                    && Vector3.Distance(m_Camera.transform.eulerAngles, m_StartTransformRotation) < 0.1f) {
+                    m_Camera.transform.position = m_StartTransformPosition;
+                    m_Camera.transform.eulerAngles = m_StartTransformRotation;
+
                     isStarting = false;
                 }
             }
