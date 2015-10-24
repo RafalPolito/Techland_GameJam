@@ -60,6 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_FadeScreen: {fileID: 0}
   m_GameOverText: {fileID: 0}
+  m_ColdText: {fileID: 0}
   m_PauseText: {fileID: 0}
   m_WinText: {fileID: 0}
   m_GameOverEvent:

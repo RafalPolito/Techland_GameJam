@@ -17,7 +17,6 @@ public class Player : MonoBehaviour {
     public Color m_ColdColor = new Color(0f, 0.5f, 1f, 1f);
     public Color m_WarmColor = new Color(1f, 0.5f, 0f, 1f);
     public Text m_GameOver;
-    public static bool isGameOver = false;
     public UnityEvent m_GameOverEvent;
 
     private ThirdPersonCharacter m_ThirdPersonCharacter;
@@ -61,9 +60,7 @@ public class Player : MonoBehaviour {
         }
 
         if(m_CurrentFreezeLevel <= 0) {
-            isGameOver = true;
-            m_GameOverEvent.Invoke();
-            m_GameOver.color = Color.white;
+            GameController.m_Cold = true;
         }
 
         m_ThirdPersonCharacter.m_AnimSpeedMultiplier = FreezeLevel();
