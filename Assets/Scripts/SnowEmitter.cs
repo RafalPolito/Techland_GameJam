@@ -43,12 +43,9 @@ public class SnowEmitter : MonoBehaviour {
             if(!CameraRotator.isStarting) {
                 float cameraShake = Input.GetAxis("CameraShake");
 
-                if(cameraShake != 0) {
-                    if(m_ShakeTimer <= 0) {
-                        //m_EmitterInstance.Emit(m_EmitCount);
-                        m_EmitterInstance.Play();
-                        m_ShakeTimer = 0.5f;
-                    }
+                if(cameraShake != 0 && Mathf.Sign(cameraShake) != m_LastSign) {
+                    m_EmitterInstance.Emit(100);
+                    m_LastSign = Mathf.Sign(cameraShake);
                 } else if(m_EmitterInstance != null) {
                     m_EmitterInstance.Stop();
                 }
