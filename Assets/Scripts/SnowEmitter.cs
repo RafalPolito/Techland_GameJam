@@ -23,6 +23,8 @@ public class SnowEmitter : MonoBehaviour {
     }
 
     void Update () {
+        m_Count = m_EmitterInstance.particleCount;
+
         if(!CameraRotator.isStarting) {
             float cameraShake = Input.GetAxis("CameraShake");
 

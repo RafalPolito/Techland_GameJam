@@ -2448,7 +2448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a404ef806540ac8499ec5354f800e76b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FreezingSpeed: 4
+  m_FreezingSpeed: 2
   m_SnowFallingMultipler: 2
   m_WarmingMultipler: 2
   m_FreezeBar: {fileID: 0}

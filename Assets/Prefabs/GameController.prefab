@@ -61,6 +61,7 @@ MonoBehaviour:
   m_FadeScreen: {fileID: 0}
   m_GameOverText: {fileID: 0}
   m_PauseText: {fileID: 0}
+  m_WinText: {fileID: 0}
   m_GameOverEvent:
     m_PersistentCalls:
       m_Calls: []

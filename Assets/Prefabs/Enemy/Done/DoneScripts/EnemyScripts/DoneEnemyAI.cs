@@ -33,19 +33,15 @@ public class DoneEnemyAI : MonoBehaviour
 	
 	void Update ()
 	{
-        if(SnowEmitter.m_Count > 0) {
-            nav.Stop();
-        } else {
-            // If the player has been sighted and isn't dead...
-            if(enemySight.personalLastSighting != lastPlayerSighting.resetPosition && playerHealth.health > 0f)
-                // ... chase.
-                Chasing();
+        // If the player has been sighted and isn't dead...
+        if(enemySight.personalLastSighting != lastPlayerSighting.resetPosition && playerHealth.health > 0f)
+            // ... chase.
+            Chasing();
 
-            // Otherwise...
-            else
-                // ... patrol.
-                Patrolling();
-        }
+        // Otherwise...
+        else
+            // ... patrol.
+            Patrolling();
 	}
 	
 	
@@ -96,7 +92,7 @@ public class DoneEnemyAI : MonoBehaviour
 		nav.speed = patrolSpeed;
 		
 		// If near the next waypoint or there is no destination...
-		if(nav.destination == lastPlayerSighting.resetPosition || nav.remainingDistance < nav.stoppingDistance)
+		if(nav.enabled && (nav.destination == lastPlayerSighting.resetPosition || nav.remainingDistance < nav.stoppingDistance))
 		{
 			// ... increment the timer.
 			patrolTimer += Time.deltaTime;
@@ -117,8 +113,10 @@ public class DoneEnemyAI : MonoBehaviour
 		else
 			// If not near a destination, reset the timer.
 			patrolTimer = 0;
-		
-		// Set the destination to the patrolWayPoint.
-		nav.destination = patrolWayPoints[wayPointIndex].position;
+
+        // Set the destination to the patrolWayPoint.
+        if(nav.enabled) {
+            nav.destination = patrolWayPoints[wayPointIndex].position;
+        }
 	}
 }

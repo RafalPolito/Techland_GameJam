@@ -34,37 +34,34 @@ public class DoneEnemySight : MonoBehaviour
 		personalLastSighting = lastPlayerSighting.resetPosition;
 		previousSighting = lastPlayerSighting.resetPosition;
 	}
-	
-	
-	void Update ()
-	{
-        Debug.Log(SnowEmitter.m_Count);
 
+
+    void Update() {
         if(SnowEmitter.m_Count > 0) {
             anim.enabled = false;
             nav.enabled = false;
         } else {
             anim.enabled = true;
             nav.enabled = true;
-        }
 
-        // If the last global sighting of the player has changed...
-        if(lastPlayerSighting.position != previousSighting) {
-            // ... then update the personal sighting to be the same as the global sighting.
-            personalLastSighting = lastPlayerSighting.position;
-            GameController.m_GameOver = true;
-        }
+            // If the last global sighting of the player has changed...
+            if(lastPlayerSighting.position != previousSighting) {
+                // ... then update the personal sighting to be the same as the global sighting.
+                personalLastSighting = lastPlayerSighting.position;
+                GameController.m_GameOver = true;
+            }
 
-        // Set the previous sighting to the be the sighting from this frame.
-        previousSighting = lastPlayerSighting.position;
-		
-		// If the player is alive...
-		if(playerHealth.health > 0f)
-			// ... set the animator parameter to whether the player is in sight or not.
-			anim.SetBool(hash.playerInSightBool, playerInSight);
-		else
-			// ... set the animator parameter to false.
-			anim.SetBool(hash.playerInSightBool, false);
+            // Set the previous sighting to the be the sighting from this frame.
+            previousSighting = lastPlayerSighting.position;
+
+            // If the player is alive...
+            if(playerHealth.health > 0f)
+                // ... set the animator parameter to whether the player is in sight or not.
+                anim.SetBool(hash.playerInSightBool, playerInSight);
+            else
+                // ... set the animator parameter to false.
+                anim.SetBool(hash.playerInSightBool, false);
+        }
 	}
 	
 

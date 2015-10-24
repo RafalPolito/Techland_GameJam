@@ -8,8 +8,10 @@ public class GameController : MonoBehaviour {
     public static bool isPaused = false;
     public Image m_FadeScreen;
 	public static bool m_GameOver = false;
+    public static bool m_Win = false;
     public Text m_GameOverText;
     public Text m_PauseText;
+    public Text m_WinText;
     public UnityEvent m_GameOverEvent;    
 
     void Update () {
@@ -22,6 +24,11 @@ public class GameController : MonoBehaviour {
             } else if(!isPaused && Time.timeScale != 1) {
                 Unfade();
             }
+        }
+
+        if(m_Win) {
+            Fade();
+            m_WinText.enabled = true;
         }
 
         if(Input.GetButtonDown("Pause")) {
