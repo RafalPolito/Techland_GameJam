@@ -45,7 +45,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 		public void Move(Vector3 move, bool crouch, bool jump)
 		{
-            if(Vector3.Distance(Vector3.zero, transform.position + move) > m_Snowball.transform.localScale.x/2 - 1) {
+            if(Vector3.Distance(Vector3.zero, transform.position + move) > m_Snowball.transform.localScale.x/2) {
                 move = Vector3.zero;
             }
 

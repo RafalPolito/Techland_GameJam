@@ -17,6 +17,7 @@ public class DoneEnemySight : MonoBehaviour
 	private DonePlayerHealth playerHealth;				// Reference to the player's health script.
 	private DoneHashIDs hash;							// Reference to the HashIDs.
 	private Vector3 previousSighting;                   // Where the player was sighted last frame.
+    public SnowEmitter snowEmitter;
 
     void Awake ()
 	{
@@ -29,15 +30,18 @@ public class DoneEnemySight : MonoBehaviour
 		playerAnim = player.GetComponent<Animator>();
 		playerHealth = player.GetComponent<DonePlayerHealth>();
 		hash = GameObject.FindGameObjectWithTag(DoneTags.gameController).GetComponent<DoneHashIDs>();
-		
-		// Set the personal sighting and the previous sighting to the reset position.
-		personalLastSighting = lastPlayerSighting.resetPosition;
+
+        GameObject go  = GameObject.FindGameObjectWithTag("SnowEmitter");
+        snowEmitter = go.GetComponent<SnowEmitter>();
+
+        // Set the personal sighting and the previous sighting to the reset position.
+        personalLastSighting = lastPlayerSighting.resetPosition;
 		previousSighting = lastPlayerSighting.resetPosition;
 	}
 
 
     void Update() {
-        if(SnowEmitter.m_Count > 0) {
+        if(snowEmitter.isSnowFalling) {
             anim.enabled = false;
             nav.enabled = false;
         } else {

@@ -14,12 +14,16 @@ public class GameController : MonoBehaviour {
     public Text m_ColdText;
     public Text m_PauseText;
     public Text m_WinText;
-    public UnityEvent m_GameOverEvent;    
+    public UnityEvent m_GameOverEvent;
+
+    public float m_RestartTimer = 3;
 
     void Update () {
         if(m_GameOver) {
             Fade();
             m_GameOverText.color = Color.white;
+
+            m_RestartTimer -= Time.deltaTime;
         } else {
             if(isPaused && Time.timeScale != 0) {
                 Pause();
@@ -31,11 +35,17 @@ public class GameController : MonoBehaviour {
         if(m_Cold) {
             Fade();
             m_ColdText.enabled = true;
+
+            m_RestartTimer -= Time.deltaTime;
         }
 
         if(m_Win) {
             Fade();
             m_WinText.enabled = true;
+        }
+
+        if(m_RestartTimer <= 0) {
+            Application.LoadLevel(Application.loadedLevel);
         }
 
         /*if(Input.GetButtonDown("Pause")) {

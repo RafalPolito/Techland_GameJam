@@ -10,7 +10,7 @@ public class Player : MonoBehaviour {
     public static float m_CurrentFreezeLevel;
     public float m_FreezingSpeed = 1;
     public float m_SnowFallingMultipler = 3;
-    public float m_WarmingMultipler = 2;
+    public float m_WarmingMultipler = 4;
     public RectTransform m_FreezeBar;
     public SnowEmitter m_SnowEmitter;
     public bool isNearFirecamp = false;
