@@ -44,8 +44,12 @@ public class GameController : MonoBehaviour {
             m_WinText.enabled = true;
         }
 
-        if(m_RestartTimer <= 0) {
+        if(m_RestartTimer <= 0 || Input.GetButtonDown("Reset")) {
             Application.LoadLevel(Application.loadedLevel);
+        }
+
+        if(Input.GetButtonDown("Quit")) {
+            Application.Quit();
         }
 
         /*if(Input.GetButtonDown("Pause")) {
