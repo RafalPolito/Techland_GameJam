@@ -5,7 +5,7 @@ public class SnowEmitter : MonoBehaviour {
 
     public ParticleSystem m_EmitterInstance;
     public float m_LastSign = 1;
-    public int m_Count = 0;
+    public static int m_Count = 0;
 
     public bool isSnowFalling {
         get {
