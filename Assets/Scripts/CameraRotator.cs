@@ -17,6 +17,7 @@ public class CameraRotator : MonoBehaviour {
     private Vector3 m_StartTransformRotation;
     public static bool isStarting = true;
     private bool isZoomed = false;
+    private float m_CameraSnap = 0.05f;
 
     void Awake() {
         m_StartTransformPosition = m_Camera.transform.position;
@@ -55,8 +56,8 @@ public class CameraRotator : MonoBehaviour {
                 m_Camera.transform.eulerAngles = Vector3.Lerp(m_Camera.transform.eulerAngles, m_StartTransformRotation, Time.deltaTime * m_ZoomSpeed / 2);
                 m_FadeScreen.color = Color.Lerp(m_FadeScreen.color, Color.clear, Time.deltaTime);
 
-                if(Vector3.Distance(m_Camera.transform.position, m_StartTransformPosition) < 0.1f
-                    && Vector3.Distance(m_Camera.transform.eulerAngles, m_StartTransformRotation) < 0.1f) {
+                if(Vector3.Distance(m_Camera.transform.position, m_StartTransformPosition) < m_CameraSnap
+                    && Vector3.Distance(m_Camera.transform.eulerAngles, m_StartTransformRotation) < m_CameraSnap) {
                     m_Camera.transform.position = m_StartTransformPosition;
                     m_Camera.transform.eulerAngles = m_StartTransformRotation;
 
