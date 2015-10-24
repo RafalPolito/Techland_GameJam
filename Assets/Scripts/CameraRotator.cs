@@ -40,6 +40,11 @@ public class CameraRotator : MonoBehaviour {
                     isZoomed = !isZoomed;
                 }
 
+                if(m_Camera.transform.localEulerAngles.x > 0) {
+                    m_Camera.transform.localEulerAngles = new Vector3(transform.eulerAngles.x * 0.1875f, 0, 0);
+                    m_Camera.transform.localPosition = new Vector3(m_StartTransformPosition.x, m_StartTransformPosition.y, m_StartTransformPosition.z - transform.eulerAngles.x * 0.125f);
+                }
+
                 if(isZoomed) {
                     m_Camera.fieldOfView = Mathf.Lerp(m_Camera.fieldOfView, m_FOV / 2, Time.deltaTime * m_ZoomSpeed);
                 } else {
@@ -50,8 +55,8 @@ public class CameraRotator : MonoBehaviour {
                 m_Camera.transform.eulerAngles = Vector3.Lerp(m_Camera.transform.eulerAngles, m_StartTransformRotation, Time.deltaTime * m_ZoomSpeed / 2);
                 m_FadeScreen.color = Color.Lerp(m_FadeScreen.color, Color.clear, Time.deltaTime);
 
-                if(Vector3.Distance(m_Camera.transform.position, m_StartTransformPosition) < 0.01f
-                    && Vector3.Distance(m_Camera.transform.eulerAngles, m_StartTransformRotation) < 0.01f) {
+                if(Vector3.Distance(m_Camera.transform.position, m_StartTransformPosition) < 0.05f
+                    && Vector3.Distance(m_Camera.transform.eulerAngles, m_StartTransformRotation) < 0.05f) {
                     isStarting = false;
                 }
             }
