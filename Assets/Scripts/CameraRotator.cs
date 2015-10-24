@@ -30,8 +30,8 @@ public class CameraRotator : MonoBehaviour {
     void Update () {
         if(m_StartDelay <= 0) {
             if(!isStarting && !GameController.isPaused) {
-                float rotationX = transform.eulerAngles.x + Input.GetAxis("CameraMoveVertical") * m_Speed * 4;
-                float rotationY = transform.eulerAngles.y + Input.GetAxis("CameraMoveHorizontal") * m_Speed;
+                float rotationX = transform.eulerAngles.x + Input.GetAxis("CameraMoveVertical") * m_Speed * 8;
+                float rotationY = transform.eulerAngles.y + Input.GetAxis("CameraMoveHorizontal") * m_Speed * 2;
 
                 if(rotationX < 90 - m_CameraClampX || rotationX > 360 - m_CameraClampX*2) {
                     transform.eulerAngles = new Vector3(rotationX, rotationY, Input.GetAxis("CameraShake") * m_ShakePower);

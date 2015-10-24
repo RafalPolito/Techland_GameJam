@@ -38,10 +38,10 @@ public class GameController : MonoBehaviour {
             m_WinText.enabled = true;
         }
 
-        if(Input.GetButtonDown("Pause")) {
+        /*if(Input.GetButtonDown("Pause")) {
             isPaused = !isPaused;
             m_PauseText.enabled = !m_PauseText.enabled;
-        }
+        }*/
 	}
 
     public void Fade() {
