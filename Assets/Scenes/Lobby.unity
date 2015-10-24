@@ -841,6 +841,10 @@ Prefab:
       propertyPath: m_FadeScreen
       value: 
       objectReference: {fileID: 1350239235}
+    - target: {fileID: 11409794, guid: a47b989707524c54ea24efcc7ed51afb, type: 2}
+      propertyPath: m_ShakePower
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a47b989707524c54ea24efcc7ed51afb, type: 2}
   m_IsPrefabParent: 0
@@ -1244,6 +1248,10 @@ Prefab:
     - target: {fileID: 11473666, guid: 7193cd38aef975d41a49c07932fbdec9, type: 2}
       propertyPath: m_WarmingMultipler
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9567200, guid: 7193cd38aef975d41a49c07932fbdec9, type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7193cd38aef975d41a49c07932fbdec9, type: 2}

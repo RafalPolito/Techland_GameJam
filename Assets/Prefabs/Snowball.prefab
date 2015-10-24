@@ -167,6 +167,7 @@ MonoBehaviour:
   m_EmitterInstance: {fileID: 19866650}
   m_LastSign: 1
   m_Timer: 7
+  m_EmitCount: 250
 --- !u!135 &13510984
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -196,7 +197,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 30
+      scalar: 25
       maxCurve:
         serializedVersion: 2
         m_Curve:

@@ -9,6 +9,7 @@ public class SnowEmitter : MonoBehaviour {
     public float m_Timer = 7;
     private float m_ShakeTimer = 0;
     private static float m_CurrentTimer;
+    public int m_EmitCount = 100;
 
     public bool isSnowFalling {
         get {
@@ -44,8 +45,8 @@ public class SnowEmitter : MonoBehaviour {
 
                 if(cameraShake != 0) {
                     if(m_ShakeTimer <= 0) {
-                        m_EmitterInstance.Emit(50);
-                        m_ShakeTimer = 1;
+                        m_EmitterInstance.Emit(m_EmitCount);
+                        m_ShakeTimer = 0.5f;
                     }
                 } else if(m_EmitterInstance != null) {
                     m_EmitterInstance.Stop();
