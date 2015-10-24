@@ -38,6 +38,16 @@ public class DoneEnemySight : MonoBehaviour
 	
 	void Update ()
 	{
+        Debug.Log(SnowEmitter.m_Count);
+
+        if(SnowEmitter.m_Count > 0) {
+            anim.enabled = false;
+            nav.enabled = false;
+        } else {
+            anim.enabled = true;
+            nav.enabled = true;
+        }
+
         // If the last global sighting of the player has changed...
         if(lastPlayerSighting.position != previousSighting) {
             // ... then update the personal sighting to be the same as the global sighting.
