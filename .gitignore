@@ -13,9 +13,22 @@
 *.userprefs
 *.pidb
 *.booproj
+*.fbx
 
 # Unity3D generated meta files
 *.pidb.meta
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
+Assets/Enemy
+Assets/Enemy.meta
+Assets/Mesh3Dmax
+Assets/Mesh3Dmax.meta
+Assets/UELandspace
+Assets/UELandspace.meta
+Assets/Underworld
+Assets/Underworld.meta
+Assets/UnderworldUE
+Assets/UnderworldUE.meta
+Assets/Underworld_Mobile
+Assets/Underworld_Mobile.meta
