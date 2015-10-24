@@ -1691,16 +1691,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 484850, guid: a47b989707524c54ea24efcc7ed51afb, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11409794, guid: a47b989707524c54ea24efcc7ed51afb, type: 2}
       propertyPath: m_FadeScreen
       value: 
       objectReference: {fileID: 1350239235}
-    - target: {fileID: 11409794, guid: a47b989707524c54ea24efcc7ed51afb, type: 2}
-      propertyPath: m_StartDelay
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a47b989707524c54ea24efcc7ed51afb, type: 2}
   m_IsPrefabParent: 0

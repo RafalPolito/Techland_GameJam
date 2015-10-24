@@ -32,7 +32,7 @@ public class CameraRotator : MonoBehaviour {
                 float rotationX = transform.eulerAngles.x + Input.GetAxis("CameraMoveVertical") * m_Speed;
                 float rotationY = transform.eulerAngles.y + Input.GetAxis("CameraMoveHorizontal") * m_Speed;
 
-                if(rotationX < 90 - m_CameraClampX || rotationX > 270 + m_CameraClampX) {
+                if(rotationX < 90 - m_CameraClampX || rotationX > 360 - m_CameraClampX*2) {
                     transform.eulerAngles = new Vector3(rotationX, rotationY, Input.GetAxis("CameraShake") * m_ShakePower);
                 }
 
