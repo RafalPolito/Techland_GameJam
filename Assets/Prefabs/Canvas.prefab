@@ -318,9 +318,16 @@ MonoBehaviour:
 
     Shake and freeze enemies - alternately LT and RT
 
+    Options - Quit game
+
+    Y - Help
+
 
     Remember to do not freeze. When snow is falling you are freezing faster. You can
-    warm up near firecamps.'
+    warm up near firecamps.
+
+
+    The colder the slower player is moving.'
 --- !u!114 &11434494
 MonoBehaviour:
   m_ObjectHideFlags: 1

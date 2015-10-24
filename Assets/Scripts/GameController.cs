@@ -45,7 +45,7 @@ public class GameController : MonoBehaviour {
         }
 
         if(m_RestartTimer <= 0 || Input.GetButtonDown("Reset")) {
-            Application.LoadLevel(Application.loadedLevel);
+            //Application.LoadLevel(Application.loadedLevel);
         }
 
         if(Input.GetButtonDown("Quit")) {

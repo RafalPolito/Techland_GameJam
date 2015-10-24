@@ -537,7 +537,7 @@ Transform:
   - {fileID: 935233530}
   - {fileID: 1569718818}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
 --- !u!1001 &259448951
 Prefab:
   m_ObjectHideFlags: 0
@@ -1557,7 +1557,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22429464, guid: 02118f09294126c40a4c04bf1337baa6, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 22429464, guid: 02118f09294126c40a4c04bf1337baa6, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -1598,35 +1598,6 @@ Prefab:
     - target: {fileID: 22429464, guid: 02118f09294126c40a4c04bf1337baa6, type: 2}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 162700, guid: 02118f09294126c40a4c04bf1337baa6, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11429808, guid: 02118f09294126c40a4c04bf1337baa6, type: 2}
-      propertyPath: m_Text
-      value: 'Move - left stick
-
-        Rotate camera - right stick
-
-        Zoom camera - RB
-
-        Jump - A
-
-        Crouch - LB
-
-        Shake and freeze enemies - alternately LT and RT
-
-        Y - Reset level
-
-        Options - Quit game
-
-
-        Remember to do not freeze. When snow is falling you are freezing faster. You
-        can warm up near firecamps.
-
-
-        The colder the slower player is moving.'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 02118f09294126c40a4c04bf1337baa6, type: 2}
@@ -2231,6 +2202,10 @@ Prefab:
     - target: {fileID: 448884, guid: 96a189ec7b271304ca332775861c2311, type: 2}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 146424, guid: 96a189ec7b271304ca332775861c2311, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 96a189ec7b271304ca332775861c2311, type: 2}

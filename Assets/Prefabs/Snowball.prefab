@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 410222}
   - 33: {fileID: 3358526}
   - 23: {fileID: 2321968}
+  - 64: {fileID: 6469770}
   m_Layer: 0
   m_Name: KulkaZiemia
   m_TagString: Untagged
@@ -49,6 +50,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &121244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 472162}
+  - 33: {fileID: 3335262}
+  - 23: {fileID: 2389680}
+  - 64: {fileID: 6407386}
+  m_Layer: 0
+  m_Name: KulkaSnieznaColision
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &136426
 GameObject:
   m_ObjectHideFlags: 0
@@ -82,7 +101,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &154526
 GameObject:
   m_ObjectHideFlags: 1
@@ -198,6 +217,7 @@ Transform:
   - {fileID: 430116}
   - {fileID: 477842}
   - {fileID: 454864}
+  - {fileID: 472162}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &454864
@@ -212,6 +232,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 447996}
   m_RootOrder: 3
+--- !u!4 &472162
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121244}
+  m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: .313999981, y: .31400001, z: .31400001}
+  m_Children: []
+  m_Father: {fileID: 447996}
+  m_RootOrder: 4
 --- !u!4 &477842
 Transform:
   m_ObjectHideFlags: 1
@@ -359,6 +391,30 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!23 &2389680
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121244}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 8b1d91bb2ca7daa47a282f717c2c83d6, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!33 &3330618
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -366,6 +422,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154526}
   m_Mesh: {fileID: 4300000, guid: 65696dc9bcb9c684e8e24fe4f6d16f90, type: 3}
+--- !u!33 &3335262
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121244}
+  m_Mesh: {fileID: 4300000, guid: c4f65b55591aa474d8a042428bf9cf28, type: 3}
 --- !u!33 &3340680
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -394,6 +457,30 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136426}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!64 &6407386
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121244}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: c4f65b55591aa474d8a042428bf9cf28, type: 3}
+--- !u!64 &6469770
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107750}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: fee07e8075cad2246b63e9ace8cde61c, type: 3}
 --- !u!114 &11472742
 MonoBehaviour:
   m_ObjectHideFlags: 1
