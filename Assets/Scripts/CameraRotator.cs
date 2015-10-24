@@ -38,7 +38,7 @@ public class CameraRotator : MonoBehaviour {
                     transform.eulerAngles = new Vector3(rotationX, rotationY, Input.GetAxis("CameraShake") * transform.eulerAngles.z);
                 }
 
-                m_UpSideDown.transform.position = new Vector3(0, Mathf.Abs(Input.GetAxis("CameraShake")) * m_ShakePower, 0);
+                m_UpSideDown.transform.position = Vector3.Lerp(m_UpSideDown.transform.position, new Vector3(0, Mathf.Abs(Input.GetAxis("CameraShake")) * m_ShakePower, 0), Time.deltaTime * 20);
 
                 if(Input.GetButtonDown("CameraZoom")) {
                     isZoomed = !isZoomed;
