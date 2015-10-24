@@ -6,10 +6,12 @@ public class SnowEmitter : MonoBehaviour {
     public ParticleSystem m_EmitterInstance;
     public float m_LastSign = 1;
     public static int m_Count = 0;
+    public float m_Timer = 7;
+    private float m_CurrentTimer;
 
     public bool isSnowFalling {
         get {
-            if(m_EmitterInstance.particleCount > 0) {
+            if(m_EmitterInstance.particleCount > 0 && m_CurrentTimer <= 0) {
                 return true;
             }
 
@@ -20,10 +22,20 @@ public class SnowEmitter : MonoBehaviour {
     void Awake() {
         m_EmitterInstance.Stop();
         m_EmitterInstance.Clear();
+
+        m_CurrentTimer = m_Timer;
     }
 
     void Update () {
         m_Count = m_EmitterInstance.particleCount;
+
+        if(m_EmitterInstance.particleCount > 0) {
+            m_CurrentTimer -= Time.deltaTime;
+        }
+
+        if(m_EmitterInstance.particleCount == 0) {
+            m_CurrentTimer = m_Timer;
+        }
 
         if(!CameraRotator.isStarting) {
             float cameraShake = Input.GetAxis("CameraShake");

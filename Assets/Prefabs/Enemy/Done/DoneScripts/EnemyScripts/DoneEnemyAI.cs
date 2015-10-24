@@ -115,7 +115,7 @@ public class DoneEnemyAI : MonoBehaviour
 			patrolTimer = 0;
 
         // Set the destination to the patrolWayPoint.
-        if(nav.enabled) {
+        if(nav.enabled && patrolWayPoints.Length > 0) {
             nav.destination = patrolWayPoints[wayPointIndex].position;
         }
 	}

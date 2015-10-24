@@ -48,7 +48,7 @@ public class DoneEnemyAnimation : MonoBehaviour
 	void OnAnimatorMove()
     {
         // Set the NavMeshAgent's velocity to the change in position since the last frame, by the time it took for the last frame.
-        if(nav.enabled) {
+        if(nav.enabled && !float.IsNaN(anim.deltaPosition.x)) {
             nav.velocity = anim.deltaPosition / Time.deltaTime;
         }
 		

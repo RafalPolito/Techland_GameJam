@@ -166,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_EmitterInstance: {fileID: 19866650}
   m_LastSign: 1
+  m_Timer: 7
 --- !u!135 &13510984
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -195,7 +196,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 120
+      scalar: 12
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -561,7 +562,7 @@ ParticleSystem:
           rgba: 4294967295
         key1:
           serializedVersion: 2
-          rgba: 4294967295
+          rgba: 16777215
         key2:
           serializedVersion: 2
           rgba: 0
