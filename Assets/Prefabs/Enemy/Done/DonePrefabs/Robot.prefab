@@ -1442,8 +1442,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100094}
-  m_LocalRotation: {x: 0, y: -.733729959, z: 0, w: .679441273}
-  m_LocalPosition: {x: -1.08700001, y: 0, z: 24.1369991}
+  m_LocalRotation: {x: 0, y: -.149362788, z: 0, w: .988782465}
+  m_LocalPosition: {x: -17.2099991, y: 0, z: -5.76000023}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400028}
@@ -1668,6 +1668,7 @@ MonoBehaviour:
   fieldOfViewAngle: 110
   playerInSight: 0
   personalLastSighting: {x: 0, y: 0, z: 0}
+  snowEmitter: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1711,9 +1712,7 @@ MonoBehaviour:
   chaseSpeed: 6
   chaseWaitTime: 5
   patrolWaitTime: 4
-  patrolWayPoints:
-  - {fileID: 0}
-  - {fileID: 0}
+  patrolWayPoints: []
 --- !u!120 &12000000
 LineRenderer:
   m_ObjectHideFlags: 1
