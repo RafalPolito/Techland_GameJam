@@ -45,7 +45,8 @@ public class SnowEmitter : MonoBehaviour {
 
                 if(cameraShake != 0) {
                     if(m_ShakeTimer <= 0) {
-                        m_EmitterInstance.Emit(m_EmitCount);
+                        //m_EmitterInstance.Emit(m_EmitCount);
+                        m_EmitterInstance.Play();
                         m_ShakeTimer = 0.5f;
                     }
                 } else if(m_EmitterInstance != null) {
