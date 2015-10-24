@@ -229,7 +229,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 3.2750001
+      scalar: 6.44999981
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -421,7 +421,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
       minMaxState: 0
-    gravityModifier: .0250000004
+    gravityModifier: .100000001
     inheritVelocity: 0
     maxNumParticles: 10000
   ShapeModule:
