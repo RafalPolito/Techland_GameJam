@@ -12,6 +12,7 @@ public class CameraRotator : MonoBehaviour {
     public Camera m_Camera;
     public Image m_FadeScreen;
     public float m_StartDelay = 3;
+    public GameObject m_UpSideDown;
 
     private Vector3 m_StartTransformPosition;
     private Vector3 m_StartTransformRotation;
@@ -34,8 +35,10 @@ public class CameraRotator : MonoBehaviour {
                 float rotationY = transform.eulerAngles.y + Input.GetAxis("CameraMoveHorizontal") * m_Speed * 2;
 
                 if(rotationX < 90 - m_CameraClampX || rotationX > 360 - m_CameraClampX*2) {
-                    transform.eulerAngles = new Vector3(rotationX, rotationY, Input.GetAxis("CameraShake") * m_ShakePower);
+                    transform.eulerAngles = new Vector3(rotationX, rotationY, Input.GetAxis("CameraShake") * transform.eulerAngles.z);
                 }
+
+                m_UpSideDown.transform.position = new Vector3(0, Input.GetAxis("CameraShake") * m_ShakePower, 0);
 
                 if(Input.GetButtonDown("CameraZoom")) {
                     isZoomed = !isZoomed;
