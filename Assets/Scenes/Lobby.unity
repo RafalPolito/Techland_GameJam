@@ -3352,6 +3352,10 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: -12.1199999
       objectReference: {fileID: 0}
+    - target: {fileID: 113070, guid: 14760f50d100a2f418ea0a190716ece3, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 14760f50d100a2f418ea0a190716ece3, type: 2}
   m_IsPrefabParent: 0
@@ -5142,14 +5146,6 @@ Prefab:
     - target: {fileID: 447996, guid: da74ebe99e814024284480f8596a5019, type: 2}
       propertyPath: m_RootOrder
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 19866650, guid: da74ebe99e814024284480f8596a5019, type: 2}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 12.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 19866650, guid: da74ebe99e814024284480f8596a5019, type: 2}
-      propertyPath: lengthInSec
-      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: da74ebe99e814024284480f8596a5019, type: 2}
