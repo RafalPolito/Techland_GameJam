@@ -63,7 +63,7 @@ public class Player : MonoBehaviour {
             GameController.m_Cold = true;
         }
 
-        m_ThirdPersonCharacter.m_AnimSpeedMultiplier = FreezeLevel();
+        //m_ThirdPersonCharacter.m_AnimSpeedMultiplier = FreezeLevel();
         m_FreezeBar.sizeDelta = new Vector2(m_CurrentFreezeLevel, m_FreezeBar.sizeDelta.y);
     }
 
